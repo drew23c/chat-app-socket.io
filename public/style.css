@@ -14,6 +14,7 @@ h2{
     border: 1px solid #ddd;
     box-shadow: 1px 3px 5px rgba(0,0,0,0.05);
     border-radius: 2px;
+    margin-top:10%;
 }
 
 #chat-window{
@@ -39,6 +40,7 @@ h2{
     color: #575ed8;
 }
 #user{
+    float: left;
     height: 100px;
     width:100px;
     font-weight:bold;
@@ -67,11 +69,15 @@ input{
 }
 
 button{
-    background: #575ed8;
+    background: red;
     color: #fff;
     font-size: 18px;
     border: 0;
     padding: 12px 0;
     width: 100%;
     border-radius: 0 0 2px 2px;
+}
+.jumbotron-fluid{
+    background-color:black !important;
+    color:whitesmoke !important;
 }

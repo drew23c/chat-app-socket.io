@@ -14,9 +14,9 @@ let users = 0;
 
 io.on('connection', function(socket){
     if(users < 2){
-        io.sockets.emit('broadcast',{ description: `${users += 1} user connected`})
+        io.sockets.emit('broadcast',{ description: `${users += 1} online`})
     }else if(users >= 2){
-        io.sockets.emit('broadcast',{ description: `${users += 1} users connected`})
+        io.sockets.emit('broadcast',{ description: `${users += 1} online`})
     }
 
 
@@ -30,7 +30,7 @@ io.on('connection', function(socket){
 
 
     socket.on('disconnect', function(){
-        io.sockets.emit('broadcast',{ description: `${users -= 1} users connected`})
+        io.sockets.emit('broadcast',{ description: `${users -= 1} online`})
     })
 })
 
