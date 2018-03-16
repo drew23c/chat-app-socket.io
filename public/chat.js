@@ -12,6 +12,9 @@ btn.addEventListener('click', function(){
         message:message.value,
         username:username.value
     })
+    if(username.value !== " "){
+        username.disabled = true;
+    }
 })
 
 message.addEventListener('keypress', function(){
@@ -21,6 +24,10 @@ message.addEventListener('keypress', function(){
 socket.on('chat', function(data){
     feedback.innerHTML = "";
     output.innerHTML += `<p><strong> ${data.username} : </strong> ${data.message} </p>`
+    setTimeout(function(data){
+        output.innerHTML = " "
+    },60000)
+    message.value = " ";
 });
 
 socket.on('typing', function(data){
@@ -29,3 +36,17 @@ socket.on('typing', function(data){
 socket.on('broadcast', function(data){
     user.innerHTML = data.description;
 })
+
+// function login(){
+//     fetch(`http:localhost:4000/${username.value}`)
+//     .then(response = response.json())
+//     .then(obj =>{
+//         if(obj.value){
+//             localStorage.setItem('signin', 'true')
+//             localStorage.setItem('username', obj.username)
+//         }else{
+//             username = " ";
+//             alert(`${obj.value} is already taken`);
+//         }
+//     })
+// }
