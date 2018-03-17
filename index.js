@@ -15,10 +15,7 @@ let users = 0;
 io.on('connection', function(socket){
     if(users < 2){
         io.sockets.emit('broadcast',{ description: `${users += 1} online`})
-    }else if(users >= 2){
-        io.sockets.emit('broadcast',{ description: `${users += 1} online`})
     }
-
 
     socket.on('chat', function(data){
         io.sockets.emit('chat', data);
