@@ -1,4 +1,6 @@
 # chat-app-socket.io
 
-Clone repo
-npm install
+<ol>
+  <li>Clone repo</li>
+  <li>npm install</li>
+</ol>
